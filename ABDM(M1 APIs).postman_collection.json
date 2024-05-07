@@ -1,0 +1,510 @@
+{
+	"info": {
+		"_postman_id": "dfd2572c-3545-43aa-b358-9c2b9759307e",
+		"name": "ABDM(M1 APIs)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23167908",
+		"_collection_link": "https://planetary-meadow-625416.postman.co/workspace/My-Workspace~dea1907e-a121-4840-89da-bfccf9870848/collection/23167908-dfd2572c-3545-43aa-b358-9c2b9759307e?action=share&source=collection_link&creator=23167908"
+	},
+	"item": [
+		{
+			"name": "Creation Process",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJBbFJiNVdDbThUbTlFSl9JZk85ejA2ajlvQ3Y1MXBLS0ZrbkdiX1RCdkswIn0.eyJleHAiOjE2ODAxNjQ1MzQsImlhdCI6MTY4MDE2MzkzNCwianRpIjoiMzNjYjRlMWItOGJlYi00OTRhLTgxNjgtOTEyYzZjOTU3MjIwIiwiaXNzIjoiaHR0cHM6Ly9kZXYubmRobS5nb3YuaW4vYXV0aC9yZWFsbXMvY2VudHJhbC1yZWdpc3RyeSIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiI5NTdjMWVmYi1lZGRmLTRkZmEtOGQyNi03ZmQyYjhhNGJhOTciLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJTQlhfMDAyMTU3Iiwic2Vzc2lvbl9zdGF0ZSI6Ijc3MGNkZTk5LTMyODktNDg4ZC05NWMzLTZhNTk0YzE0ZTQwNCIsImFjciI6IjEiLCJhbGxvd2VkLW9yaWdpbnMiOlsiaHR0cDovL2xvY2FsaG9zdDo5MDA3Il0sInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJoaXUiLCJvZmZsaW5lX2FjY2VzcyIsImhlYWx0aElkIiwiT0lEQyIsImhpcCJdfSwicmVzb3VyY2VfYWNjZXNzIjp7IlNCWF8wMDIxNTciOnsicm9sZXMiOlsidW1hX3Byb3RlY3Rpb24iXX0sImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoib3BlbmlkIGVtYWlsIHByb2ZpbGUiLCJjbGllbnRIb3N0IjoiMTAuMjMzLjY5LjI0NyIsImNsaWVudElkIjoiU0JYXzAwMjE1NyIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwicHJlZmVycmVkX3VzZXJuYW1lIjoic2VydmljZS1hY2NvdW50LXNieF8wMDIxNTciLCJjbGllbnRBZGRyZXNzIjoiMTAuMjMzLjY5LjI0NyJ9.gwQ9ucyWWCQIdhaSbI0V8LD-i0D2opbPhlajf-StBMPK2XRgbrgCh6HponeeOfm4ORKA4T0Jwweusse86kY2PYVM6er6ImdMX_RkRSPa-CNSCpDJH6OQc69tzsUkstRwXo0Ci-HlhCuMX_Az-6inxVGfohJj4Uy18fA3CudLU9UwdBFCBo4DXTDXXrqoGL0B9wlEnNColmtrQqN3LTeHvNxvXZLT1ZRpuY5aSrovoCEJgughxIG4sTF8EtUPs7Lie7fMpLchl2NHzErhf6wWlQd3QEboBcTPMfaFjvF50Mg0sFV0hHq-UVHQJJKxRvUIKajzmTTPxe6o3bQCmrE2bA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"clientId\": \"SBX_002157\",\r\n    \"clientSecret\": \"f2c18111-d47c-4f29-b5cd-95c7d5462af1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://dev.abdm.gov.in/gateway/v0.5/sessions",
+							"protocol": "https",
+							"host": [
+								"dev",
+								"abdm",
+								"gov",
+								"in"
+							],
+							"path": [
+								"gateway",
+								"v0.5",
+								"sessions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Generate OTP",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									" "
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									" "
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJBbFJiNVdDbThUbTlFSl9JZk85ejA2ajlvQ3Y1MXBLS0ZrbkdiX1RCdkswIn0.eyJleHAiOjE2ODA2MDY4OTUsImlhdCI6MTY4MDYwNjI5NSwianRpIjoiODQ2OTk2MTUtNzZmMi00ZGYzLWI0N2EtNTdlYjYxMTBjMDQ5IiwiaXNzIjoiaHR0cHM6Ly9kZXYubmRobS5nb3YuaW4vYXV0aC9yZWFsbXMvY2VudHJhbC1yZWdpc3RyeSIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiI5NTdjMWVmYi1lZGRmLTRkZmEtOGQyNi03ZmQyYjhhNGJhOTciLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJTQlhfMDAyMTU3Iiwic2Vzc2lvbl9zdGF0ZSI6ImM5ZWUxMGU3LTAyZmEtNDA5MS1hNTM0LTBkZDU0YzQ0ODEwOCIsImFjciI6IjEiLCJhbGxvd2VkLW9yaWdpbnMiOlsiaHR0cDovL2xvY2FsaG9zdDo5MDA3Il0sInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJoaXUiLCJvZmZsaW5lX2FjY2VzcyIsImhlYWx0aElkIiwiT0lEQyIsImhpcCJdfSwicmVzb3VyY2VfYWNjZXNzIjp7IlNCWF8wMDIxNTciOnsicm9sZXMiOlsidW1hX3Byb3RlY3Rpb24iXX0sImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoib3BlbmlkIGVtYWlsIHByb2ZpbGUiLCJjbGllbnRIb3N0IjoiMTAuMjMzLjY5LjI0NyIsImNsaWVudElkIjoiU0JYXzAwMjE1NyIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwicHJlZmVycmVkX3VzZXJuYW1lIjoic2VydmljZS1hY2NvdW50LXNieF8wMDIxNTciLCJjbGllbnRBZGRyZXNzIjoiMTAuMjMzLjY5LjI0NyJ9.V8mNJCw_gWqzyD9Y2Rd3bKfNMWhaMrAJAN6GbZ2tuF4uu8L5VOroLry5GoTOHQibJWhQub3na-J7gw4amZOSKV1Od5XE_TZ5RvNP49bkoPkv91NcczHADdgsVaH05YLmq0ZKRAYVdle4TmJZkCCz1OZa5nrczhqTtTfU9y7mGHRQ0KJAXHepjvhpk67lHSxsHpjDLcdO600fAqqGwoaq5c0q2zOoc1r4o73WOZ9PhB3JmjsO_9yn6qHllH3Ba-YhuKUgUa1fI6arQW64jnIlglIk8LIAD8JPwftTKmedmC0gM3tM0nWVO79ZvvPcxpo35GJA_wXA_FpTKtIL-kd0sw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "User-Agent",
+								"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36",
+								"type": "text",
+								"uuid": "82f4945c-521f-47c7-8a07-92e6240e10de",
+								"disabled": true
+							},
+							{
+								"key": "Accept-Language",
+								"value": "en-US",
+								"type": "text",
+								"uuid": "10cf55d4-aff9-4f67-b2fe-7a90956edadb"
+							},
+							{
+								"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman.",
+								"key": "Authorization",
+								"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJBbFJiNVdDbThUbTlFSl9JZk85ejA2ajlvQ3Y1MXBLS0ZrbkdiX1RCdkswIn0.eyJleHAiOjE2ODA2MDY4OTUsImlhdCI6MTY4MDYwNjI5NSwianRpIjoiODQ2OTk2MTUtNzZmMi00ZGYzLWI0N2EtNTdlYjYxMTBjMDQ5IiwiaXNzIjoiaHR0cHM6Ly9kZXYubmRobS5nb3YuaW4vYXV0aC9yZWFsbXMvY2VudHJhbC1yZWdpc3RyeSIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiI5NTdjMWVmYi1lZGRmLTRkZmEtOGQyNi03ZmQyYjhhNGJhOTciLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJTQlhfMDAyMTU3Iiwic2Vzc2lvbl9zdGF0ZSI6ImM5ZWUxMGU3LTAyZmEtNDA5MS1hNTM0LTBkZDU0YzQ0ODEwOCIsImFjciI6IjEiLCJhbGxvd2VkLW9yaWdpbnMiOlsiaHR0cDovL2xvY2FsaG9zdDo5MDA3Il0sInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJoaXUiLCJvZmZsaW5lX2FjY2VzcyIsImhlYWx0aElkIiwiT0lEQyIsImhpcCJdfSwicmVzb3VyY2VfYWNjZXNzIjp7IlNCWF8wMDIxNTciOnsicm9sZXMiOlsidW1hX3Byb3RlY3Rpb24iXX0sImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoib3BlbmlkIGVtYWlsIHByb2ZpbGUiLCJjbGllbnRIb3N0IjoiMTAuMjMzLjY5LjI0NyIsImNsaWVudElkIjoiU0JYXzAwMjE1NyIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwicHJlZmVycmVkX3VzZXJuYW1lIjoic2VydmljZS1hY2NvdW50LXNieF8wMDIxNTciLCJjbGllbnRBZGRyZXNzIjoiMTAuMjMzLjY5LjI0NyJ9.V8mNJCw_gWqzyD9Y2Rd3bKfNMWhaMrAJAN6GbZ2tuF4uu8L5VOroLry5GoTOHQibJWhQub3na-J7gw4amZOSKV1Od5XE_TZ5RvNP49bkoPkv91NcczHADdgsVaH05YLmq0ZKRAYVdle4TmJZkCCz1OZa5nrczhqTtTfU9y7mGHRQ0KJAXHepjvhpk67lHSxsHpjDLcdO600fAqqGwoaq5c0q2zOoc1r4o73WOZ9PhB3JmjsO_9yn6qHllH3Ba-YhuKUgUa1fI6arQW64jnIlglIk8LIAD8JPwftTKmedmC0gM3tM0nWVO79ZvvPcxpo35GJA_wXA_FpTKtIL-kd0sw",
+								"type": "text",
+								"uuid": "31bf5e90-8e73-49b5-aa42-65911eaa2d3d"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"aadhaar\":644369920032\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://healthidsbx.abdm.gov.in/api/v1/registration/aadhaar/generateOtp",
+							"protocol": "https",
+							"host": [
+								"healthidsbx",
+								"abdm",
+								"gov",
+								"in"
+							],
+							"path": [
+								"api",
+								"v1",
+								"registration",
+								"aadhaar",
+								"generateOtp"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "VerifyOTP",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJBbFJiNVdDbThUbTlFSl9JZk85ejA2ajlvQ3Y1MXBLS0ZrbkdiX1RCdkswIn0.eyJleHAiOjE2ODA2MDE2MTUsImlhdCI6MTY4MDYwMTAxNSwianRpIjoiZmIwYzUxNDQtOTlkNC00MWM4LTg5NzEtNTk5MjQ1ZWVmZmZmIiwiaXNzIjoiaHR0cHM6Ly9kZXYubmRobS5nb3YuaW4vYXV0aC9yZWFsbXMvY2VudHJhbC1yZWdpc3RyeSIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiI5NTdjMWVmYi1lZGRmLTRkZmEtOGQyNi03ZmQyYjhhNGJhOTciLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJTQlhfMDAyMTU3Iiwic2Vzc2lvbl9zdGF0ZSI6IjQ2NjBkYjE3LWY3YWItNDc0NS05YjZmLTI5NjNhZTg1NjgwOSIsImFjciI6IjEiLCJhbGxvd2VkLW9yaWdpbnMiOlsiaHR0cDovL2xvY2FsaG9zdDo5MDA3Il0sInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJoaXUiLCJvZmZsaW5lX2FjY2VzcyIsImhlYWx0aElkIiwiT0lEQyIsImhpcCJdfSwicmVzb3VyY2VfYWNjZXNzIjp7IlNCWF8wMDIxNTciOnsicm9sZXMiOlsidW1hX3Byb3RlY3Rpb24iXX0sImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoib3BlbmlkIGVtYWlsIHByb2ZpbGUiLCJjbGllbnRIb3N0IjoiMTAuMjMzLjY5LjI0NyIsImNsaWVudElkIjoiU0JYXzAwMjE1NyIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwicHJlZmVycmVkX3VzZXJuYW1lIjoic2VydmljZS1hY2NvdW50LXNieF8wMDIxNTciLCJjbGllbnRBZGRyZXNzIjoiMTAuMjMzLjY5LjI0NyJ9.ILn-Xo4fTlunBJ7kig8xpC3J4KjxX5tDlcg38M3UMEUUEJLyqELmeJK50rGJUhVQbEX3NtvWKofx2-VLYxtjSx71IRu3wo4x8d-sd3UxW2--tvQ77OICmfPS3xfOZJmHrCFecnUJBfSBgErNEB97IeKdgQmmOIqrmrj0GQWJj_DykeQfZQxYPBZxf6jwN7XfOzyfrM1Nhj371_S-UeItEsMcMMsC8PXebYUALVsvGRh7Y0vWMbulMKUxzZaY-39b7QC5SG0MEtXLP2WmrAj4cDTduiL2djGX5ESvfwDTybecWLw6UXQ7r6VUKmsmrz-ttcnMqorJKFG71kLHHLvBXQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman.",
+								"key": "Authorization",
+								"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJBbFJiNVdDbThUbTlFSl9JZk85ejA2ajlvQ3Y1MXBLS0ZrbkdiX1RCdkswIn0.eyJleHAiOjE2ODA2MDE2MTUsImlhdCI6MTY4MDYwMTAxNSwianRpIjoiZmIwYzUxNDQtOTlkNC00MWM4LTg5NzEtNTk5MjQ1ZWVmZmZmIiwiaXNzIjoiaHR0cHM6Ly9kZXYubmRobS5nb3YuaW4vYXV0aC9yZWFsbXMvY2VudHJhbC1yZWdpc3RyeSIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiI5NTdjMWVmYi1lZGRmLTRkZmEtOGQyNi03ZmQyYjhhNGJhOTciLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJTQlhfMDAyMTU3Iiwic2Vzc2lvbl9zdGF0ZSI6IjQ2NjBkYjE3LWY3YWItNDc0NS05YjZmLTI5NjNhZTg1NjgwOSIsImFjciI6IjEiLCJhbGxvd2VkLW9yaWdpbnMiOlsiaHR0cDovL2xvY2FsaG9zdDo5MDA3Il0sInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJoaXUiLCJvZmZsaW5lX2FjY2VzcyIsImhlYWx0aElkIiwiT0lEQyIsImhpcCJdfSwicmVzb3VyY2VfYWNjZXNzIjp7IlNCWF8wMDIxNTciOnsicm9sZXMiOlsidW1hX3Byb3RlY3Rpb24iXX0sImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoib3BlbmlkIGVtYWlsIHByb2ZpbGUiLCJjbGllbnRIb3N0IjoiMTAuMjMzLjY5LjI0NyIsImNsaWVudElkIjoiU0JYXzAwMjE1NyIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwicHJlZmVycmVkX3VzZXJuYW1lIjoic2VydmljZS1hY2NvdW50LXNieF8wMDIxNTciLCJjbGllbnRBZGRyZXNzIjoiMTAuMjMzLjY5LjI0NyJ9.ILn-Xo4fTlunBJ7kig8xpC3J4KjxX5tDlcg38M3UMEUUEJLyqELmeJK50rGJUhVQbEX3NtvWKofx2-VLYxtjSx71IRu3wo4x8d-sd3UxW2--tvQ77OICmfPS3xfOZJmHrCFecnUJBfSBgErNEB97IeKdgQmmOIqrmrj0GQWJj_DykeQfZQxYPBZxf6jwN7XfOzyfrM1Nhj371_S-UeItEsMcMMsC8PXebYUALVsvGRh7Y0vWMbulMKUxzZaY-39b7QC5SG0MEtXLP2WmrAj4cDTduiL2djGX5ESvfwDTybecWLw6UXQ7r6VUKmsmrz-ttcnMqorJKFG71kLHHLvBXQ",
+								"type": "text",
+								"uuid": "23def49f-bea4-4cf9-b342-0033f86d443f"
+							},
+							{
+								"key": "Accept-Language",
+								"value": "en-US",
+								"type": "text",
+								"uuid": "1fbb1865-f444-4415-9dbb-4ed9bfacbf13"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"otp\":532390,\r\n    \"txnId\":\"7517a4ba-b61d-4722-b0f7-6e8d34b113ac\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://healthidsbx.abdm.gov.in/api/v1/registration/aadhaar/verifyOTP",
+							"protocol": "https",
+							"host": [
+								"healthidsbx",
+								"abdm",
+								"gov",
+								"in"
+							],
+							"path": [
+								"api",
+								"v1",
+								"registration",
+								"aadhaar",
+								"verifyOTP"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CheckAndGenerateMobOTP",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJBbFJiNVdDbThUbTlFSl9JZk85ejA2ajlvQ3Y1MXBLS0ZrbkdiX1RCdkswIn0.eyJleHAiOjE2ODA2MDE2MTUsImlhdCI6MTY4MDYwMTAxNSwianRpIjoiZmIwYzUxNDQtOTlkNC00MWM4LTg5NzEtNTk5MjQ1ZWVmZmZmIiwiaXNzIjoiaHR0cHM6Ly9kZXYubmRobS5nb3YuaW4vYXV0aC9yZWFsbXMvY2VudHJhbC1yZWdpc3RyeSIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiI5NTdjMWVmYi1lZGRmLTRkZmEtOGQyNi03ZmQyYjhhNGJhOTciLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJTQlhfMDAyMTU3Iiwic2Vzc2lvbl9zdGF0ZSI6IjQ2NjBkYjE3LWY3YWItNDc0NS05YjZmLTI5NjNhZTg1NjgwOSIsImFjciI6IjEiLCJhbGxvd2VkLW9yaWdpbnMiOlsiaHR0cDovL2xvY2FsaG9zdDo5MDA3Il0sInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJoaXUiLCJvZmZsaW5lX2FjY2VzcyIsImhlYWx0aElkIiwiT0lEQyIsImhpcCJdfSwicmVzb3VyY2VfYWNjZXNzIjp7IlNCWF8wMDIxNTciOnsicm9sZXMiOlsidW1hX3Byb3RlY3Rpb24iXX0sImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoib3BlbmlkIGVtYWlsIHByb2ZpbGUiLCJjbGllbnRIb3N0IjoiMTAuMjMzLjY5LjI0NyIsImNsaWVudElkIjoiU0JYXzAwMjE1NyIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwicHJlZmVycmVkX3VzZXJuYW1lIjoic2VydmljZS1hY2NvdW50LXNieF8wMDIxNTciLCJjbGllbnRBZGRyZXNzIjoiMTAuMjMzLjY5LjI0NyJ9.ILn-Xo4fTlunBJ7kig8xpC3J4KjxX5tDlcg38M3UMEUUEJLyqELmeJK50rGJUhVQbEX3NtvWKofx2-VLYxtjSx71IRu3wo4x8d-sd3UxW2--tvQ77OICmfPS3xfOZJmHrCFecnUJBfSBgErNEB97IeKdgQmmOIqrmrj0GQWJj_DykeQfZQxYPBZxf6jwN7XfOzyfrM1Nhj371_S-UeItEsMcMMsC8PXebYUALVsvGRh7Y0vWMbulMKUxzZaY-39b7QC5SG0MEtXLP2WmrAj4cDTduiL2djGX5ESvfwDTybecWLw6UXQ7r6VUKmsmrz-ttcnMqorJKFG71kLHHLvBXQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman.",
+								"key": "Authorization",
+								"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJBbFJiNVdDbThUbTlFSl9JZk85ejA2ajlvQ3Y1MXBLS0ZrbkdiX1RCdkswIn0.eyJleHAiOjE2ODA2MDE2MTUsImlhdCI6MTY4MDYwMTAxNSwianRpIjoiZmIwYzUxNDQtOTlkNC00MWM4LTg5NzEtNTk5MjQ1ZWVmZmZmIiwiaXNzIjoiaHR0cHM6Ly9kZXYubmRobS5nb3YuaW4vYXV0aC9yZWFsbXMvY2VudHJhbC1yZWdpc3RyeSIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiI5NTdjMWVmYi1lZGRmLTRkZmEtOGQyNi03ZmQyYjhhNGJhOTciLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJTQlhfMDAyMTU3Iiwic2Vzc2lvbl9zdGF0ZSI6IjQ2NjBkYjE3LWY3YWItNDc0NS05YjZmLTI5NjNhZTg1NjgwOSIsImFjciI6IjEiLCJhbGxvd2VkLW9yaWdpbnMiOlsiaHR0cDovL2xvY2FsaG9zdDo5MDA3Il0sInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJoaXUiLCJvZmZsaW5lX2FjY2VzcyIsImhlYWx0aElkIiwiT0lEQyIsImhpcCJdfSwicmVzb3VyY2VfYWNjZXNzIjp7IlNCWF8wMDIxNTciOnsicm9sZXMiOlsidW1hX3Byb3RlY3Rpb24iXX0sImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoib3BlbmlkIGVtYWlsIHByb2ZpbGUiLCJjbGllbnRIb3N0IjoiMTAuMjMzLjY5LjI0NyIsImNsaWVudElkIjoiU0JYXzAwMjE1NyIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwicHJlZmVycmVkX3VzZXJuYW1lIjoic2VydmljZS1hY2NvdW50LXNieF8wMDIxNTciLCJjbGllbnRBZGRyZXNzIjoiMTAuMjMzLjY5LjI0NyJ9.ILn-Xo4fTlunBJ7kig8xpC3J4KjxX5tDlcg38M3UMEUUEJLyqELmeJK50rGJUhVQbEX3NtvWKofx2-VLYxtjSx71IRu3wo4x8d-sd3UxW2--tvQ77OICmfPS3xfOZJmHrCFecnUJBfSBgErNEB97IeKdgQmmOIqrmrj0GQWJj_DykeQfZQxYPBZxf6jwN7XfOzyfrM1Nhj371_S-UeItEsMcMMsC8PXebYUALVsvGRh7Y0vWMbulMKUxzZaY-39b7QC5SG0MEtXLP2WmrAj4cDTduiL2djGX5ESvfwDTybecWLw6UXQ7r6VUKmsmrz-ttcnMqorJKFG71kLHHLvBXQ",
+								"type": "text",
+								"uuid": "b96dfd0f-fbc3-4d21-947f-04bb4196d439"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"mobile\":9811310922, \r\n    \"txnId\":\"7517a4ba-b61d-4722-b0f7-6e8d34b113ac\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://healthidsbx.abdm.gov.in/api/v2/registration/aadhaar/checkAndGenerateMobileOTP",
+							"protocol": "https",
+							"host": [
+								"healthidsbx",
+								"abdm",
+								"gov",
+								"in"
+							],
+							"path": [
+								"api",
+								"v2",
+								"registration",
+								"aadhaar",
+								"checkAndGenerateMobileOTP"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreateHealthIdWithPreVerified",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJBbFJiNVdDbThUbTlFSl9JZk85ejA2ajlvQ3Y1MXBLS0ZrbkdiX1RCdkswIn0.eyJleHAiOjE2ODE4ODU3NjMsImlhdCI6MTY4MTg4NTE2MywianRpIjoiNjQ4NzFlZmQtYTIwMS00NzliLTk1MmMtM2UyMWU1YTQ0OTFhIiwiaXNzIjoiaHR0cHM6Ly9kZXYubmRobS5nb3YuaW4vYXV0aC9yZWFsbXMvY2VudHJhbC1yZWdpc3RyeSIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiI5NTdjMWVmYi1lZGRmLTRkZmEtOGQyNi03ZmQyYjhhNGJhOTciLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJTQlhfMDAyMTU3Iiwic2Vzc2lvbl9zdGF0ZSI6IjM5MzdlMjUzLTI2OTgtNDRlYS05MWVjLTZjMWNiN2MwYzI3NCIsImFjciI6IjEiLCJhbGxvd2VkLW9yaWdpbnMiOlsiaHR0cDovL2xvY2FsaG9zdDo5MDA3Il0sInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJoaXUiLCJvZmZsaW5lX2FjY2VzcyIsImhlYWx0aElkIiwiT0lEQyIsImhpcCJdfSwicmVzb3VyY2VfYWNjZXNzIjp7IlNCWF8wMDIxNTciOnsicm9sZXMiOlsidW1hX3Byb3RlY3Rpb24iXX0sImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoib3BlbmlkIGVtYWlsIHByb2ZpbGUiLCJjbGllbnRIb3N0IjoiMTAuMjMzLjY4LjIwMyIsImNsaWVudElkIjoiU0JYXzAwMjE1NyIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwicHJlZmVycmVkX3VzZXJuYW1lIjoic2VydmljZS1hY2NvdW50LXNieF8wMDIxNTciLCJjbGllbnRBZGRyZXNzIjoiMTAuMjMzLjY4LjIwMyJ9.kTmVOI06brSz6Nly4sJwik5Hd033VDkqpO69ZF_w5VdhoaMss812Cl1nEsaHpvmf2kcUPZQC7Mm-W-5O8VZZJoTVFRt3rOiMonS-IyhKVj-2fNFLotu_OvZF2FCs2IkszYZAqMHKU3BfR-8Jm-z3JJLFKaJ3o-HiYJvHLwRN4LOHf3pYrdtINPB5wbbvmG_0-4QG8oUNbhcp3CDpJDpH5V9hmjqatfD1Sl6KjdocVOgB6XVh6fkc5vPpGHFYU5qbVUcL-8JhrZkwk4afXKcn-5uaCVaR0afPlpkOf3ShIdqCY7TsaV-BSoYObMZztMkehHNecO0FtBeGBB7m_NtMdw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman.",
+								"key": "Authorization",
+								"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJBbFJiNVdDbThUbTlFSl9JZk85ejA2ajlvQ3Y1MXBLS0ZrbkdiX1RCdkswIn0.eyJleHAiOjE2ODE4ODU3NjMsImlhdCI6MTY4MTg4NTE2MywianRpIjoiNjQ4NzFlZmQtYTIwMS00NzliLTk1MmMtM2UyMWU1YTQ0OTFhIiwiaXNzIjoiaHR0cHM6Ly9kZXYubmRobS5nb3YuaW4vYXV0aC9yZWFsbXMvY2VudHJhbC1yZWdpc3RyeSIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiI5NTdjMWVmYi1lZGRmLTRkZmEtOGQyNi03ZmQyYjhhNGJhOTciLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJTQlhfMDAyMTU3Iiwic2Vzc2lvbl9zdGF0ZSI6IjM5MzdlMjUzLTI2OTgtNDRlYS05MWVjLTZjMWNiN2MwYzI3NCIsImFjciI6IjEiLCJhbGxvd2VkLW9yaWdpbnMiOlsiaHR0cDovL2xvY2FsaG9zdDo5MDA3Il0sInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJoaXUiLCJvZmZsaW5lX2FjY2VzcyIsImhlYWx0aElkIiwiT0lEQyIsImhpcCJdfSwicmVzb3VyY2VfYWNjZXNzIjp7IlNCWF8wMDIxNTciOnsicm9sZXMiOlsidW1hX3Byb3RlY3Rpb24iXX0sImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoib3BlbmlkIGVtYWlsIHByb2ZpbGUiLCJjbGllbnRIb3N0IjoiMTAuMjMzLjY4LjIwMyIsImNsaWVudElkIjoiU0JYXzAwMjE1NyIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwicHJlZmVycmVkX3VzZXJuYW1lIjoic2VydmljZS1hY2NvdW50LXNieF8wMDIxNTciLCJjbGllbnRBZGRyZXNzIjoiMTAuMjMzLjY4LjIwMyJ9.kTmVOI06brSz6Nly4sJwik5Hd033VDkqpO69ZF_w5VdhoaMss812Cl1nEsaHpvmf2kcUPZQC7Mm-W-5O8VZZJoTVFRt3rOiMonS-IyhKVj-2fNFLotu_OvZF2FCs2IkszYZAqMHKU3BfR-8Jm-z3JJLFKaJ3o-HiYJvHLwRN4LOHf3pYrdtINPB5wbbvmG_0-4QG8oUNbhcp3CDpJDpH5V9hmjqatfD1Sl6KjdocVOgB6XVh6fkc5vPpGHFYU5qbVUcL-8JhrZkwk4afXKcn-5uaCVaR0afPlpkOf3ShIdqCY7TsaV-BSoYObMZztMkehHNecO0FtBeGBB7m_NtMdw",
+								"type": "text",
+								"uuid": "90cef97f-e6e0-46bf-84bf-e3170253dc7a"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"parthadey@u4rad.com\",\r\n    \"firstName\":\"Partha\",\r\n    \"healthId\":\"parthadey71\",\r\n    \"lastName\":\"Dey\",\r\n    \"middleName\":\"\",\r\n    \"password\":\"Parthadey@1971\",\r\n    \"profilePhoto\":\"\",\r\n    \"txnId\":\"7517a4ba-b61d-4722-b0f7-6e8d34b113ac\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://healthidsbx.abdm.gov.in/api/v1/registration/aadhaar/createHealthIdWithPreVerified",
+							"protocol": "https",
+							"host": [
+								"healthidsbx",
+								"abdm",
+								"gov",
+								"in"
+							],
+							"path": [
+								"api",
+								"v1",
+								"registration",
+								"aadhaar",
+								"createHealthIdWithPreVerified"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Verification Process",
+			"item": [
+				{
+					"name": "InitiateABHANo",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJBbFJiNVdDbThUbTlFSl9JZk85ejA2ajlvQ3Y1MXBLS0ZrbkdiX1RCdkswIn0.eyJleHAiOjE2ODA5NDE4MDEsImlhdCI6MTY4MDk0MTIwMSwianRpIjoiZjk0ODk3MDctYzhhNS00NDU5LWE2NWYtYzhmNmI5ZThkYWJhIiwiaXNzIjoiaHR0cHM6Ly9kZXYubmRobS5nb3YuaW4vYXV0aC9yZWFsbXMvY2VudHJhbC1yZWdpc3RyeSIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiI5NTdjMWVmYi1lZGRmLTRkZmEtOGQyNi03ZmQyYjhhNGJhOTciLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJTQlhfMDAyMTU3Iiwic2Vzc2lvbl9zdGF0ZSI6IjhjNzMwZTZlLTI2NDQtNDhkOS1hNDZjLWIwYmYyYTNjYTEwOSIsImFjciI6IjEiLCJhbGxvd2VkLW9yaWdpbnMiOlsiaHR0cDovL2xvY2FsaG9zdDo5MDA3Il0sInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJoaXUiLCJvZmZsaW5lX2FjY2VzcyIsImhlYWx0aElkIiwiT0lEQyIsImhpcCJdfSwicmVzb3VyY2VfYWNjZXNzIjp7IlNCWF8wMDIxNTciOnsicm9sZXMiOlsidW1hX3Byb3RlY3Rpb24iXX0sImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoib3BlbmlkIGVtYWlsIHByb2ZpbGUiLCJjbGllbnRIb3N0IjoiMTAuMjMzLjY5LjI0NyIsImNsaWVudElkIjoiU0JYXzAwMjE1NyIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwicHJlZmVycmVkX3VzZXJuYW1lIjoic2VydmljZS1hY2NvdW50LXNieF8wMDIxNTciLCJjbGllbnRBZGRyZXNzIjoiMTAuMjMzLjY5LjI0NyJ9.Te2MMrTrK3jQL_Oz9ZF49D--g859qloEqmmTwTXmJrcBB8VM3yeD9x5E3oH2YOAkJMM8jwPrXnacBTalw-dQNK99NP6pQd_kDJ4KS7eeGqf8eCHbkbA5GL1i2LotW2yaGSwNeAKf6CNCMgku8h951_VX2M4maTF9DTQ7yLkX8_mapGxFq3ERbAROZwe6q-1jZy2aHUnNvFL_AvzeTeFHuIH5MbEwY5jv2aW-fZA5WpRhm6DhXotiAJRqllNj4JpocqZNjqu31mpOYBMoCTkd3FogVAhsFZcjQHKgJw507kDHheRaouezoWoAG7F0T-ggeFO3sHkAb25rIg2sXhhCdg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman.",
+								"key": "Authorization",
+								"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJBbFJiNVdDbThUbTlFSl9JZk85ejA2ajlvQ3Y1MXBLS0ZrbkdiX1RCdkswIn0.eyJleHAiOjE2ODA5NDE4MDEsImlhdCI6MTY4MDk0MTIwMSwianRpIjoiZjk0ODk3MDctYzhhNS00NDU5LWE2NWYtYzhmNmI5ZThkYWJhIiwiaXNzIjoiaHR0cHM6Ly9kZXYubmRobS5nb3YuaW4vYXV0aC9yZWFsbXMvY2VudHJhbC1yZWdpc3RyeSIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiI5NTdjMWVmYi1lZGRmLTRkZmEtOGQyNi03ZmQyYjhhNGJhOTciLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJTQlhfMDAyMTU3Iiwic2Vzc2lvbl9zdGF0ZSI6IjhjNzMwZTZlLTI2NDQtNDhkOS1hNDZjLWIwYmYyYTNjYTEwOSIsImFjciI6IjEiLCJhbGxvd2VkLW9yaWdpbnMiOlsiaHR0cDovL2xvY2FsaG9zdDo5MDA3Il0sInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJoaXUiLCJvZmZsaW5lX2FjY2VzcyIsImhlYWx0aElkIiwiT0lEQyIsImhpcCJdfSwicmVzb3VyY2VfYWNjZXNzIjp7IlNCWF8wMDIxNTciOnsicm9sZXMiOlsidW1hX3Byb3RlY3Rpb24iXX0sImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoib3BlbmlkIGVtYWlsIHByb2ZpbGUiLCJjbGllbnRIb3N0IjoiMTAuMjMzLjY5LjI0NyIsImNsaWVudElkIjoiU0JYXzAwMjE1NyIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwicHJlZmVycmVkX3VzZXJuYW1lIjoic2VydmljZS1hY2NvdW50LXNieF8wMDIxNTciLCJjbGllbnRBZGRyZXNzIjoiMTAuMjMzLjY5LjI0NyJ9.Te2MMrTrK3jQL_Oz9ZF49D--g859qloEqmmTwTXmJrcBB8VM3yeD9x5E3oH2YOAkJMM8jwPrXnacBTalw-dQNK99NP6pQd_kDJ4KS7eeGqf8eCHbkbA5GL1i2LotW2yaGSwNeAKf6CNCMgku8h951_VX2M4maTF9DTQ7yLkX8_mapGxFq3ERbAROZwe6q-1jZy2aHUnNvFL_AvzeTeFHuIH5MbEwY5jv2aW-fZA5WpRhm6DhXotiAJRqllNj4JpocqZNjqu31mpOYBMoCTkd3FogVAhsFZcjQHKgJw507kDHheRaouezoWoAG7F0T-ggeFO3sHkAb25rIg2sXhhCdg",
+								"type": "text",
+								"uuid": "e2d5b107-7797-4c9f-be35-519c156326dd"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"authMethod\": \"AADHAAR_OTP\",\r\n    \"healthid\": \"parthadey71@sbx\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://healthidsbx.abdm.gov.in/api/v1/auth/init",
+							"protocol": "https",
+							"host": [
+								"healthidsbx",
+								"abdm",
+								"gov",
+								"in"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"init"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ConfirmWithAAdhaarOTP",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJBbFJiNVdDbThUbTlFSl9JZk85ejA2ajlvQ3Y1MXBLS0ZrbkdiX1RCdkswIn0.eyJleHAiOjE2ODA5NDE4MDEsImlhdCI6MTY4MDk0MTIwMSwianRpIjoiZjk0ODk3MDctYzhhNS00NDU5LWE2NWYtYzhmNmI5ZThkYWJhIiwiaXNzIjoiaHR0cHM6Ly9kZXYubmRobS5nb3YuaW4vYXV0aC9yZWFsbXMvY2VudHJhbC1yZWdpc3RyeSIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiI5NTdjMWVmYi1lZGRmLTRkZmEtOGQyNi03ZmQyYjhhNGJhOTciLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJTQlhfMDAyMTU3Iiwic2Vzc2lvbl9zdGF0ZSI6IjhjNzMwZTZlLTI2NDQtNDhkOS1hNDZjLWIwYmYyYTNjYTEwOSIsImFjciI6IjEiLCJhbGxvd2VkLW9yaWdpbnMiOlsiaHR0cDovL2xvY2FsaG9zdDo5MDA3Il0sInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJoaXUiLCJvZmZsaW5lX2FjY2VzcyIsImhlYWx0aElkIiwiT0lEQyIsImhpcCJdfSwicmVzb3VyY2VfYWNjZXNzIjp7IlNCWF8wMDIxNTciOnsicm9sZXMiOlsidW1hX3Byb3RlY3Rpb24iXX0sImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoib3BlbmlkIGVtYWlsIHByb2ZpbGUiLCJjbGllbnRIb3N0IjoiMTAuMjMzLjY5LjI0NyIsImNsaWVudElkIjoiU0JYXzAwMjE1NyIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwicHJlZmVycmVkX3VzZXJuYW1lIjoic2VydmljZS1hY2NvdW50LXNieF8wMDIxNTciLCJjbGllbnRBZGRyZXNzIjoiMTAuMjMzLjY5LjI0NyJ9.Te2MMrTrK3jQL_Oz9ZF49D--g859qloEqmmTwTXmJrcBB8VM3yeD9x5E3oH2YOAkJMM8jwPrXnacBTalw-dQNK99NP6pQd_kDJ4KS7eeGqf8eCHbkbA5GL1i2LotW2yaGSwNeAKf6CNCMgku8h951_VX2M4maTF9DTQ7yLkX8_mapGxFq3ERbAROZwe6q-1jZy2aHUnNvFL_AvzeTeFHuIH5MbEwY5jv2aW-fZA5WpRhm6DhXotiAJRqllNj4JpocqZNjqu31mpOYBMoCTkd3FogVAhsFZcjQHKgJw507kDHheRaouezoWoAG7F0T-ggeFO3sHkAb25rIg2sXhhCdg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman.",
+								"key": "Authorization",
+								"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJBbFJiNVdDbThUbTlFSl9JZk85ejA2ajlvQ3Y1MXBLS0ZrbkdiX1RCdkswIn0.eyJleHAiOjE2ODA5NDE4MDEsImlhdCI6MTY4MDk0MTIwMSwianRpIjoiZjk0ODk3MDctYzhhNS00NDU5LWE2NWYtYzhmNmI5ZThkYWJhIiwiaXNzIjoiaHR0cHM6Ly9kZXYubmRobS5nb3YuaW4vYXV0aC9yZWFsbXMvY2VudHJhbC1yZWdpc3RyeSIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiI5NTdjMWVmYi1lZGRmLTRkZmEtOGQyNi03ZmQyYjhhNGJhOTciLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJTQlhfMDAyMTU3Iiwic2Vzc2lvbl9zdGF0ZSI6IjhjNzMwZTZlLTI2NDQtNDhkOS1hNDZjLWIwYmYyYTNjYTEwOSIsImFjciI6IjEiLCJhbGxvd2VkLW9yaWdpbnMiOlsiaHR0cDovL2xvY2FsaG9zdDo5MDA3Il0sInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJoaXUiLCJvZmZsaW5lX2FjY2VzcyIsImhlYWx0aElkIiwiT0lEQyIsImhpcCJdfSwicmVzb3VyY2VfYWNjZXNzIjp7IlNCWF8wMDIxNTciOnsicm9sZXMiOlsidW1hX3Byb3RlY3Rpb24iXX0sImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoib3BlbmlkIGVtYWlsIHByb2ZpbGUiLCJjbGllbnRIb3N0IjoiMTAuMjMzLjY5LjI0NyIsImNsaWVudElkIjoiU0JYXzAwMjE1NyIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwicHJlZmVycmVkX3VzZXJuYW1lIjoic2VydmljZS1hY2NvdW50LXNieF8wMDIxNTciLCJjbGllbnRBZGRyZXNzIjoiMTAuMjMzLjY5LjI0NyJ9.Te2MMrTrK3jQL_Oz9ZF49D--g859qloEqmmTwTXmJrcBB8VM3yeD9x5E3oH2YOAkJMM8jwPrXnacBTalw-dQNK99NP6pQd_kDJ4KS7eeGqf8eCHbkbA5GL1i2LotW2yaGSwNeAKf6CNCMgku8h951_VX2M4maTF9DTQ7yLkX8_mapGxFq3ERbAROZwe6q-1jZy2aHUnNvFL_AvzeTeFHuIH5MbEwY5jv2aW-fZA5WpRhm6DhXotiAJRqllNj4JpocqZNjqu31mpOYBMoCTkd3FogVAhsFZcjQHKgJw507kDHheRaouezoWoAG7F0T-ggeFO3sHkAb25rIg2sXhhCdg",
+								"type": "text",
+								"uuid": "e4855a56-1a5b-4e98-9034-d9093a72479d"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"otp\": 311530,\r\n  \"txnId\":\"6c1955d4-1ffc-4b70-a987-e5197adb9683\"\r\n}   ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://healthidsbx.abdm.gov.in/api/v1/auth/confirmWithAadhaarOtp",
+							"protocol": "https",
+							"host": [
+								"healthidsbx",
+								"abdm",
+								"gov",
+								"in"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"confirmWithAadhaarOtp"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Profile",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJBbFJiNVdDbThUbTlFSl9JZk85ejA2ajlvQ3Y1MXBLS0ZrbkdiX1RCdkswIn0.eyJleHAiOjE2ODIwMDI0ODMsImlhdCI6MTY4MjAwMTg4MywianRpIjoiYzUwY2YwZjktZDVjNi00ODdkLWEyOTYtNzVkMjU3ZDMxMmMwIiwiaXNzIjoiaHR0cHM6Ly9kZXYubmRobS5nb3YuaW4vYXV0aC9yZWFsbXMvY2VudHJhbC1yZWdpc3RyeSIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiI5NTdjMWVmYi1lZGRmLTRkZmEtOGQyNi03ZmQyYjhhNGJhOTciLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJTQlhfMDAyMTU3Iiwic2Vzc2lvbl9zdGF0ZSI6IjAxNDI2OTY3LWFjNjgtNGQ5Zi1iMDRhLTc3ZDNhZjA3NzA5ZCIsImFjciI6IjEiLCJhbGxvd2VkLW9yaWdpbnMiOlsiaHR0cDovL2xvY2FsaG9zdDo5MDA3Il0sInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJoaXUiLCJvZmZsaW5lX2FjY2VzcyIsImhlYWx0aElkIiwiT0lEQyIsImhpcCJdfSwicmVzb3VyY2VfYWNjZXNzIjp7IlNCWF8wMDIxNTciOnsicm9sZXMiOlsidW1hX3Byb3RlY3Rpb24iXX0sImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoib3BlbmlkIGVtYWlsIHByb2ZpbGUiLCJjbGllbnRIb3N0IjoiMTAuMjMzLjY5LjI1IiwiY2xpZW50SWQiOiJTQlhfMDAyMTU3IiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJzZXJ2aWNlLWFjY291bnQtc2J4XzAwMjE1NyIsImNsaWVudEFkZHJlc3MiOiIxMC4yMzMuNjkuMjUifQ.VSXYXvIxGskpnRVBEKfRUxU9K6Ug003yEo30Q8ed0I8qKl5pkPSqqnEuheI7FCu-UG3dfGarF_D4A-0UJWlxwLFBmuThk5nGEe951aRZMYnzf1e81VwzhA21Or90DXfc9zOA3fqAJ4UaMmH51d5-NUZOt3tJf97XLXEhldLJU7KxMZSG6GgS55ijeEz5Teyj0HMZiXotbmBemadoeeiXoNC1u0PHsFrS6dSFb3IC6R-drXTm4GZcLMAB1TTc1ph_vRsHcKnE7U8NugpuR5Xqoppw1xOhJAXQpOHp12305qXLIS3g7PMjEppFivtOQCBSeQTvUXLW0hL3LX2bKZNB_Q",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Token",
+								"value": "Bearer eyJhbGciOiJSUzUxMiJ9.eyJzdWIiOiI5MS0zNTQxLTA1ODItMzA3NSIsImNsaWVudElkIjoiU0JYXzAwMjE1NyIsInN5c3RlbSI6IkFCSEEtTiIsIm1vYmlsZSI6Ijk4MTEzMTA5MjIiLCJoZWFsdGhJZCI6InBhcnRoYWRleTcxQHNieCIsImV4cCI6MTY4MDk0MzA0OSwiaGVhbHRoSWROdW1iZXIiOiI5MS0zNTQxLTA1ODItMzA3NSIsImlhdCI6MTY4MDk0MTI0OX0.qy3xpIYK3miJLsFDrGdVdLnrlJzBLCnJX1wR4-vX_EV-xWh9uRTIqsJg7q6rTUm1hGCfl7X_xf_qIacH74dXCzY_KEAJ8Yf7oz87XygZbDqGb6udzTOmqSrQQbfIXQhsYABn6JfpRGz23dB1q21EiG6QBlWokzDSyEN17zpDe5w_-zZLk9pOEaw-dTW_ygzXEaVQA0qvvtMlm_o3wK06mPHaZr6F9zHGV0GWpjccCC4jx551egQVHiPyeTmqI-bCfXONPI6He1tMvg11XYkiIvHiTp5VLDIXyje8daYzHgGZAymxu27qmV6G0Ek2txAUCK0lwdQq_rzyxU0agVjM5Jl-Pi4MUFHL1gw8mIo7BwgEYSLxsH9j1WQwKP_xI33O0SJ932gdIsim2RXR7oO7nf1nWpAHnKKW284jKUfLepfFgrlPtpCqG2RyAWmBDcLedlFvkunEqs9bTPpP8el-glFC7WqSNW_nN6ex3AQaRJ_KBNIEAQBfHoCZ6cHS0JA908OsMxkUYej8ifN4EA94XDmZLQW_W2LcdGSqczuRFTL--gixnCMlwxV7CGdO-hZv7N5Sw-HxqlwxJFaKoV1cc7ix0wcvcnv1QDG9Cd2tsaMUKsgZUSVjTNmDlXyaUEFpYZbZbm7dxhWcRl7q4VLvdmIuIbSRHBh42GukvUG2gL0",
+								"type": "text",
+								"uuid": "3892966e-5745-483b-90d8-0ab2c8cb8c47"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://healthidsbx.abdm.gov.in/api/v1/account/profile",
+							"protocol": "https",
+							"host": [
+								"healthidsbx",
+								"abdm",
+								"gov",
+								"in"
+							],
+							"path": [
+								"api",
+								"v1",
+								"account",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get QRCode",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJBbFJiNVdDbThUbTlFSl9JZk85ejA2ajlvQ3Y1MXBLS0ZrbkdiX1RCdkswIn0.eyJleHAiOjE2ODA5NDE4MDEsImlhdCI6MTY4MDk0MTIwMSwianRpIjoiZjk0ODk3MDctYzhhNS00NDU5LWE2NWYtYzhmNmI5ZThkYWJhIiwiaXNzIjoiaHR0cHM6Ly9kZXYubmRobS5nb3YuaW4vYXV0aC9yZWFsbXMvY2VudHJhbC1yZWdpc3RyeSIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiI5NTdjMWVmYi1lZGRmLTRkZmEtOGQyNi03ZmQyYjhhNGJhOTciLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJTQlhfMDAyMTU3Iiwic2Vzc2lvbl9zdGF0ZSI6IjhjNzMwZTZlLTI2NDQtNDhkOS1hNDZjLWIwYmYyYTNjYTEwOSIsImFjciI6IjEiLCJhbGxvd2VkLW9yaWdpbnMiOlsiaHR0cDovL2xvY2FsaG9zdDo5MDA3Il0sInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJoaXUiLCJvZmZsaW5lX2FjY2VzcyIsImhlYWx0aElkIiwiT0lEQyIsImhpcCJdfSwicmVzb3VyY2VfYWNjZXNzIjp7IlNCWF8wMDIxNTciOnsicm9sZXMiOlsidW1hX3Byb3RlY3Rpb24iXX0sImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoib3BlbmlkIGVtYWlsIHByb2ZpbGUiLCJjbGllbnRIb3N0IjoiMTAuMjMzLjY5LjI0NyIsImNsaWVudElkIjoiU0JYXzAwMjE1NyIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwicHJlZmVycmVkX3VzZXJuYW1lIjoic2VydmljZS1hY2NvdW50LXNieF8wMDIxNTciLCJjbGllbnRBZGRyZXNzIjoiMTAuMjMzLjY5LjI0NyJ9.Te2MMrTrK3jQL_Oz9ZF49D--g859qloEqmmTwTXmJrcBB8VM3yeD9x5E3oH2YOAkJMM8jwPrXnacBTalw-dQNK99NP6pQd_kDJ4KS7eeGqf8eCHbkbA5GL1i2LotW2yaGSwNeAKf6CNCMgku8h951_VX2M4maTF9DTQ7yLkX8_mapGxFq3ERbAROZwe6q-1jZy2aHUnNvFL_AvzeTeFHuIH5MbEwY5jv2aW-fZA5WpRhm6DhXotiAJRqllNj4JpocqZNjqu31mpOYBMoCTkd3FogVAhsFZcjQHKgJw507kDHheRaouezoWoAG7F0T-ggeFO3sHkAb25rIg2sXhhCdg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Token",
+								"value": "Bearer eyJhbGciOiJSUzUxMiJ9.eyJzdWIiOiI5MS0zNTQxLTA1ODItMzA3NSIsImNsaWVudElkIjoiU0JYXzAwMjE1NyIsInN5c3RlbSI6IkFCSEEtTiIsIm1vYmlsZSI6Ijk4MTEzMTA5MjIiLCJoZWFsdGhJZCI6InBhcnRoYWRleTcxQHNieCIsImV4cCI6MTY4MDk0MzA0OSwiaGVhbHRoSWROdW1iZXIiOiI5MS0zNTQxLTA1ODItMzA3NSIsImlhdCI6MTY4MDk0MTI0OX0.qy3xpIYK3miJLsFDrGdVdLnrlJzBLCnJX1wR4-vX_EV-xWh9uRTIqsJg7q6rTUm1hGCfl7X_xf_qIacH74dXCzY_KEAJ8Yf7oz87XygZbDqGb6udzTOmqSrQQbfIXQhsYABn6JfpRGz23dB1q21EiG6QBlWokzDSyEN17zpDe5w_-zZLk9pOEaw-dTW_ygzXEaVQA0qvvtMlm_o3wK06mPHaZr6F9zHGV0GWpjccCC4jx551egQVHiPyeTmqI-bCfXONPI6He1tMvg11XYkiIvHiTp5VLDIXyje8daYzHgGZAymxu27qmV6G0Ek2txAUCK0lwdQq_rzyxU0agVjM5Jl-Pi4MUFHL1gw8mIo7BwgEYSLxsH9j1WQwKP_xI33O0SJ932gdIsim2RXR7oO7nf1nWpAHnKKW284jKUfLepfFgrlPtpCqG2RyAWmBDcLedlFvkunEqs9bTPpP8el-glFC7WqSNW_nN6ex3AQaRJ_KBNIEAQBfHoCZ6cHS0JA908OsMxkUYej8ifN4EA94XDmZLQW_W2LcdGSqczuRFTL--gixnCMlwxV7CGdO-hZv7N5Sw-HxqlwxJFaKoV1cc7ix0wcvcnv1QDG9Cd2tsaMUKsgZUSVjTNmDlXyaUEFpYZbZbm7dxhWcRl7q4VLvdmIuIbSRHBh42GukvUG2gL0",
+								"type": "text",
+								"uuid": "43a824c8-0d4e-4642-bb0c-268543dbf7e3"
+							}
+						],
+						"url": {
+							"raw": "https://healthidsbx.abdm.gov.in/api/v1/account/qrCode",
+							"protocol": "https",
+							"host": [
+								"healthidsbx",
+								"abdm",
+								"gov",
+								"in"
+							],
+							"path": [
+								"api",
+								"v1",
+								"account",
+								"qrCode"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "name_details",
+			"value": ""
+		}
+	]
+}

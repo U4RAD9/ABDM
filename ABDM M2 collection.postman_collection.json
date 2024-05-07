@@ -1,0 +1,854 @@
+{
+	"info": {
+		"_postman_id": "23eff009-51a8-4bdd-9a70-fcc1db6c97d8",
+		"name": "ABDM M2 collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23167908",
+		"_collection_link": "https://planetary-meadow-625416.postman.co/workspace/My-Workspace~dea1907e-a121-4840-89da-bfccf9870848/collection/23167908-23eff009-51a8-4bdd-9a70-fcc1db6c97d8?action=share&source=collection_link&creator=23167908"
+	},
+	"item": [
+		{
+			"name": "Registration & Auth",
+			"item": [
+				{
+					"name": "Fetch Auth Token",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const response = pm.response.json();",
+									"pm.environment.set(\"token\", response.token);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"clientId\": \"SBX_002157\",\n    \"clientSecret\": \"f2c18111-d47c-4f29-b5cd-95c7d5462af1\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://dev.abdm.gov.in/gateway/v0.5/sessions",
+							"protocol": "https",
+							"host": [
+								"dev",
+								"abdm",
+								"gov",
+								"in"
+							],
+							"path": [
+								"gateway",
+								"v0.5",
+								"sessions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register HRP Host",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJBbFJiNVdDbThUbTlFSl9JZk85ejA2ajlvQ3Y1MXBLS0ZrbkdiX1RCdkswIn0.eyJleHAiOjE2OTQ3NzYwNDUsImlhdCI6MTY5NDc1NDQ0NSwianRpIjoiOWQxZDdjYjEtNGExZi00OGVlLTgzZTktZjBmMzhmNmRjNGYwIiwiaXNzIjoiaHR0cHM6Ly9kZXYubmRobS5nb3YuaW4vYXV0aC9yZWFsbXMvY2VudHJhbC1yZWdpc3RyeSIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiI5NTdjMWVmYi1lZGRmLTRkZmEtOGQyNi03ZmQyYjhhNGJhOTciLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJTQlhfMDAyMTU3Iiwic2Vzc2lvbl9zdGF0ZSI6ImUxNDExOTY5LWU0OGMtNDM4YS05NGZjLWUwMzJlYWE4ZTI3NyIsImFjciI6IjEiLCJhbGxvd2VkLW9yaWdpbnMiOlsiaHR0cDovL2xvY2FsaG9zdDo5MDA3Il0sInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJoaXUiLCJvZmZsaW5lX2FjY2VzcyIsImhlYWx0aElkIiwiT0lEQyIsImhpcCJdfSwicmVzb3VyY2VfYWNjZXNzIjp7IlNCWF8wMDIxNTciOnsicm9sZXMiOlsidW1hX3Byb3RlY3Rpb24iXX0sImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoib3BlbmlkIGVtYWlsIHByb2ZpbGUiLCJjbGllbnRIb3N0IjoiMTAuMjMzLjY4LjcyIiwiY2xpZW50SWQiOiJTQlhfMDAyMTU3IiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJzZXJ2aWNlLWFjY291bnQtc2J4XzAwMjE1NyIsImNsaWVudEFkZHJlc3MiOiIxMC4yMzMuNjguNzIifQ.NwTQb8RCVa0BIeJ_psYch4KEkISQtzqtIYoId7a7GTOoTvLmqSzIPwEfB3K6k-LceXU_fQxM9aRricXvzei14fMXSvoOYN5bhCNtx5eM42ONZzADtFW0YsRJ7iSMBjQFDXUd4zBV6CugtLMy_FCabitVRZh-cJ6bNAWd3FjearHR8kIQoD1_H6VPQEm19DoJBK69uGJnkQlqVqYffv8poJoxfcakY3ocC62PgPIA-exs8X-HxmZnloGgN9-FLza-bnN1XpyHqYhfOi_mqd0fd4WNVcrxZeOD3YoZC-4vS5bT_QR5Mr42ba_H9biHyM3bept6l25MhkOVnLYhcsjjQA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJBbFJiNVdDbThUbTlFSl9JZk85ejA2ajlvQ3Y1MXBLS0ZrbkdiX1RCdkswIn0.eyJleHAiOjE2OTQ3NzYwNDUsImlhdCI6MTY5NDc1NDQ0NSwianRpIjoiOWQxZDdjYjEtNGExZi00OGVlLTgzZTktZjBmMzhmNmRjNGYwIiwiaXNzIjoiaHR0cHM6Ly9kZXYubmRobS5nb3YuaW4vYXV0aC9yZWFsbXMvY2VudHJhbC1yZWdpc3RyeSIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiI5NTdjMWVmYi1lZGRmLTRkZmEtOGQyNi03ZmQyYjhhNGJhOTciLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJTQlhfMDAyMTU3Iiwic2Vzc2lvbl9zdGF0ZSI6ImUxNDExOTY5LWU0OGMtNDM4YS05NGZjLWUwMzJlYWE4ZTI3NyIsImFjciI6IjEiLCJhbGxvd2VkLW9yaWdpbnMiOlsiaHR0cDovL2xvY2FsaG9zdDo5MDA3Il0sInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJoaXUiLCJvZmZsaW5lX2FjY2VzcyIsImhlYWx0aElkIiwiT0lEQyIsImhpcCJdfSwicmVzb3VyY2VfYWNjZXNzIjp7IlNCWF8wMDIxNTciOnsicm9sZXMiOlsidW1hX3Byb3RlY3Rpb24iXX0sImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoib3BlbmlkIGVtYWlsIHByb2ZpbGUiLCJjbGllbnRIb3N0IjoiMTAuMjMzLjY4LjcyIiwiY2xpZW50SWQiOiJTQlhfMDAyMTU3IiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJzZXJ2aWNlLWFjY291bnQtc2J4XzAwMjE1NyIsImNsaWVudEFkZHJlc3MiOiIxMC4yMzMuNjguNzIifQ.NwTQb8RCVa0BIeJ_psYch4KEkISQtzqtIYoId7a7GTOoTvLmqSzIPwEfB3K6k-LceXU_fQxM9aRricXvzei14fMXSvoOYN5bhCNtx5eM42ONZzADtFW0YsRJ7iSMBjQFDXUd4zBV6CugtLMy_FCabitVRZh-cJ6bNAWd3FjearHR8kIQoD1_H6VPQEm19DoJBK69uGJnkQlqVqYffv8poJoxfcakY3ocC62PgPIA-exs8X-HxmZnloGgN9-FLza-bnN1XpyHqYhfOi_mqd0fd4WNVcrxZeOD3YoZC-4vS5bT_QR5Mr42ba_H9biHyM3bept6l25MhkOVnLYhcsjjQA",
+								"type": "text",
+								"uuid": "28626426-86fb-47af-8e62-5d4c0c3c52cb"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"url\": \"https://eoakc0gicbp0ub8.m.pipedream.net\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://dev.abdm.gov.in/devservice/v1/bridges",
+							"protocol": "https",
+							"host": [
+								"dev",
+								"abdm",
+								"gov",
+								"in"
+							],
+							"path": [
+								"devservice",
+								"v1",
+								"bridges"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register Facility",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{Auth_Token}}",
+								"type": "text",
+								"uuid": "6199e33e-8bf6-45f4-835c-d80f5db60f96"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n    {\n        \"id\": \"demo-hip-0006\",\n        \"name\": \"Demo HIP 6\",\n        \"type\": \"HIP\",\n        \"active\": true,\n        \"alias\": [\n            \"demo-hip-0006\"\n        ]\n    }\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://dev.abdm.gov.in/devservice/v1/bridges/addUpdateServices",
+							"protocol": "https",
+							"host": [
+								"dev",
+								"abdm",
+								"gov",
+								"in"
+							],
+							"path": [
+								"devservice",
+								"v1",
+								"bridges",
+								"addUpdateServices"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Registered Facilities",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{Auth_Token}}",
+								"type": "text",
+								"uuid": "6899aa93-6cf1-4a9c-90d0-1bc05e7cbc56"
+							},
+							{
+								"key": "X-CM-ID",
+								"value": "sbx",
+								"type": "text",
+								"uuid": "5f7913c4-8db2-4313-a2b4-557ccd874207"
+							}
+						],
+						"url": {
+							"raw": "https://dev.abdm.gov.in/devservice/v1/bridges/getServices",
+							"protocol": "https",
+							"host": [
+								"dev",
+								"abdm",
+								"gov",
+								"in"
+							],
+							"path": [
+								"devservice",
+								"v1",
+								"bridges",
+								"getServices"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "HIP initiated linking",
+			"item": [
+				{
+					"name": "M2 · Fetch Auth Modes",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{Auth_Token}}",
+								"type": "text",
+								"uuid": "d865a360-deb2-4276-8a9d-3bbcb1874364"
+							},
+							{
+								"key": "X-CM-ID",
+								"value": "sbx",
+								"type": "text",
+								"uuid": "3b6d36a8-da63-4e68-a58b-930469783e78"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"requestId\": \"{{$guid}}\",\n    \"timestamp\": \"{{$isoTimestamp}}\",\n    \"query\": {\n        \"id\": \"{{Patient_ID}}\",\n        \"purpose\": \"KYC_AND_LINK\",\n        \"requester\": {\n            \"type\": \"HIP\",\n            \"id\": \"{{HIP_ID}}\"\n        }\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://dev.abdm.gov.in/gateway/v0.5/users/auth/fetch-modes",
+							"protocol": "https",
+							"host": [
+								"dev",
+								"abdm",
+								"gov",
+								"in"
+							],
+							"path": [
+								"gateway",
+								"v0.5",
+								"users",
+								"auth",
+								"fetch-modes"
+							]
+						},
+						"description": "This is the gateway bound API to fetch all possible authentication modes for a particular ABHA ID"
+					},
+					"response": []
+				},
+				{
+					"name": "M2 · Init Auth",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{Auth_Token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJBbFJiNVdDbThUbTlFSl9JZk85ejA2ajlvQ3Y1MXBLS0ZrbkdiX1RCdkswIn0.eyJleHAiOjE2OTQ2OTY5MzUsImlhdCI6MTY5NDY3NTMzNSwianRpIjoiYzUxNjk4MjMtMmQyMC00MTFhLTkyMmQtODNkYTU1ZTdmODgwIiwiaXNzIjoiaHR0cHM6Ly9kZXYubmRobS5nb3YuaW4vYXV0aC9yZWFsbXMvY2VudHJhbC1yZWdpc3RyeSIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiI5NTdjMWVmYi1lZGRmLTRkZmEtOGQyNi03ZmQyYjhhNGJhOTciLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJTQlhfMDAyMTU3Iiwic2Vzc2lvbl9zdGF0ZSI6IjdiNjZjZDNmLWJmMDItNDVhNi1iMTAxLWU4ODZkYzIzN2M3NSIsImFjciI6IjEiLCJhbGxvd2VkLW9yaWdpbnMiOlsiaHR0cDovL2xvY2FsaG9zdDo5MDA3Il0sInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJoaXUiLCJvZmZsaW5lX2FjY2VzcyIsImhlYWx0aElkIiwiT0lEQyIsImhpcCJdfSwicmVzb3VyY2VfYWNjZXNzIjp7IlNCWF8wMDIxNTciOnsicm9sZXMiOlsidW1hX3Byb3RlY3Rpb24iXX0sImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoib3BlbmlkIGVtYWlsIHByb2ZpbGUiLCJjbGllbnRIb3N0IjoiMTAuMjMzLjcwLjIzNSIsImNsaWVudElkIjoiU0JYXzAwMjE1NyIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwicHJlZmVycmVkX3VzZXJuYW1lIjoic2VydmljZS1hY2NvdW50LXNieF8wMDIxNTciLCJjbGllbnRBZGRyZXNzIjoiMTAuMjMzLjcwLjIzNSJ9.J4PPCgHa8YR8v1yYOcnmRctOUN-jEI3pHiLXRi2h-5YVdq-p4Ii9eEd45WFEFn56zZQ83YwLGQ7UM8AMB2VgHGzH3VbYsMMSY4_wyzKePq4pZv26swqwhT35sA_WCaQnB6jv2QRWUD0ZVWy7tFHTv42RaFulroUr80THRQot3BH52PJZvLZVQX2nMRbGV3C_mfsf1pmKF4HeAnoE9hJ3wYdCcww2c-ORj1ivTkbIdnn_DVj9RRVOme5JAlDtlXWnte6AWdM9-fmMG553V1rXJHoOhG2pq-wQLZTvMG9HfyaRyoeog-NJjaY5ReHcFAWfNqlFlpS2xgczAyDuLY7i4Q",
+								"type": "text",
+								"uuid": "53186169-0b93-4c7b-ad83-2e22c380fbfb"
+							},
+							{
+								"key": "X-CM-ID",
+								"value": "sbx",
+								"type": "text",
+								"uuid": "135aaf66-ebb0-42c4-a6f6-cb3813bfb453"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"requestId\": \"{{$guid}}\",\n    \"timestamp\": \"{{$isoTimestamp}}\",\n    \"query\": {\n        \"id\": \"hitesh98@sbx\",\n        \"purpose\": \"KYC_AND_LINK\",\n        \"authMode\": \"MOBILE_OTP\",\n        \"requester\": {\n            \"type\": \"HIP\",\n            \"id\": \"XRAi-Facility\"\n        }\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://dev.abdm.gov.in/gateway/v0.5/users/auth/init",
+							"protocol": "https",
+							"host": [
+								"dev",
+								"abdm",
+								"gov",
+								"in"
+							],
+							"path": [
+								"gateway",
+								"v0.5",
+								"users",
+								"auth",
+								"init"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "M2 · Confirm Auth",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Update user creation token\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.environment.set(\"CURRENT_LINKING_TOKEN\", jsonData.accessToken);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{Auth_Token}}",
+								"type": "text",
+								"uuid": "8da684ef-12a8-4368-8ae1-b0c35d236cdd"
+							},
+							{
+								"key": "X-CM-ID",
+								"value": "sbx",
+								"type": "text",
+								"uuid": "ec90d289-27ea-478b-bce1-ad9465ad0f53"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"requestId\": \"{{$guid}}\",\n    \"timestamp\": \"{{$isoTimestamp}}\",\n    \"transactionId\": \"3e9dead3-921a-4264-b442-6bc0d97813c7\",\n    \"credential\": {\n        \"authCode\": \"716061\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://dev.ndhm.gov.in/gateway/v0.5/users/auth/confirm",
+							"protocol": "https",
+							"host": [
+								"dev",
+								"ndhm",
+								"gov",
+								"in"
+							],
+							"path": [
+								"gateway",
+								"v0.5",
+								"users",
+								"auth",
+								"confirm"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "M2 · Add Care Contexts",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{Auth_Token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJBbFJiNVdDbThUbTlFSl9JZk85ejA2ajlvQ3Y1MXBLS0ZrbkdiX1RCdkswIn0.eyJleHAiOjE2OTQ3MDU5MTQsImlhdCI6MTY5NDY4NDMxNCwianRpIjoiODllNjc5MWUtYTc3ZS00NjU3LWE3ZjQtOWI5YTVmNDhkMTI1IiwiaXNzIjoiaHR0cHM6Ly9kZXYubmRobS5nb3YuaW4vYXV0aC9yZWFsbXMvY2VudHJhbC1yZWdpc3RyeSIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiI5NTdjMWVmYi1lZGRmLTRkZmEtOGQyNi03ZmQyYjhhNGJhOTciLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJTQlhfMDAyMTU3Iiwic2Vzc2lvbl9zdGF0ZSI6ImMzMTc4YjE2LTI5N2MtNGVlNi1iYjJiLTg3YjAzNjYwNDZhNSIsImFjciI6IjEiLCJhbGxvd2VkLW9yaWdpbnMiOlsiaHR0cDovL2xvY2FsaG9zdDo5MDA3Il0sInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJoaXUiLCJvZmZsaW5lX2FjY2VzcyIsImhlYWx0aElkIiwiT0lEQyIsImhpcCJdfSwicmVzb3VyY2VfYWNjZXNzIjp7IlNCWF8wMDIxNTciOnsicm9sZXMiOlsidW1hX3Byb3RlY3Rpb24iXX0sImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoib3BlbmlkIGVtYWlsIHByb2ZpbGUiLCJjbGllbnRIb3N0IjoiMTAuMjMzLjcwLjI0MiIsImNsaWVudElkIjoiU0JYXzAwMjE1NyIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwicHJlZmVycmVkX3VzZXJuYW1lIjoic2VydmljZS1hY2NvdW50LXNieF8wMDIxNTciLCJjbGllbnRBZGRyZXNzIjoiMTAuMjMzLjcwLjI0MiJ9.SEi4xPoM-InFf-tIr-Sp4fF4EdY78uaPR1OudW7_pDSL9mKUy_JkGZve1NkWzafwQTGRkygNecD8WQjO3cWWh8A7E2zQoHxI4eUx8k9IrE3nTGaJ5sQPqL-UlP5I3wHMiSRBPrCft4UQJCgyYvW8b0ozng9FkL1BNrJsSXogaEBz3aq366ERt_BdhHr4qUVig9SVAMt4jMAGeaM1cC1sqls1SDPIXk-JTN8OLNBFlSb35crNz5Qan8Wf59DcyMTkKuO82a3HNPIzxEgdkSc4i3kZ464KxWtmmP-Fss122hOSB7aS8G-PUhq-8HZcWlq7mL3JKO8IHrDdfZZs_qwU1Q",
+								"type": "text",
+								"uuid": "1ff005ab-e108-41d8-b215-4bb7d87d4f22"
+							},
+							{
+								"key": "X-CM-ID",
+								"value": "sbx",
+								"type": "text",
+								"uuid": "894aeafe-6014-4e6f-bbf1-35f5216c6a40"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"requestId\": \"{{$guid}}\",\n    \"timestamp\": \"{{$isoTimestamp}}\",\n    \"link\": {\n        \"accessToken\": \"eyJhbGciOiJSUzUxMiJ9.eyJzdWIiOiJoaXRlc2g5OEBzYngiLCJyZXF1ZXN0ZXJUeXBlIjoiSElQIiwicmVxdWVzdGVySWQiOiJYUkFJIERJR0lUQUwxIiwicGF0aWVudElkIjoiaGl0ZXNoOThAc2J4Iiwic2Vzc2lvbklkIjoiZDM0MTg4ODQtZDI4ZS00ZTU4LWI1NDgtZWM3M2U2MDI5MDIwIiwiZXhwIjoxNjk0ODU4MTUxLCJpYXQiOjE2OTQ3NzE3NTF9.hbf8QI3QqbnyVo8PTB3LlwJuVjQprB2DPNvgXTh4_eMt1Jrxja2oXNraqOiaC6oyen53gdrr4xU1LaztUQiQStikynmAxWHmCZ02kgVbV9kR7M2oV9AKnTXk92BCidKQWY8bfhaHFCXnuRxR6ZBo1pDAshHkvBoim32_attZs2sSNMG6-D3wAZHukHKuk3vUx3IO5Saf4K2ZgxakHp-GYLh54rmEhiMuOi7n_ezMHZa84pqJu6lMguCHrT99aBdTpBXpkEhyvu8hMcsiG3-SwxrMRLdgutx-iiYZP_8jHXCeHWJuH97g_hqLgyrxjjdaxty47Y-nmqgEjc4HEMafBQ\",\n        \"patient\": {\n            \"referenceNumber\": \"PUID-000010\",\n            \"display\": \"Hitesh Mishra\",\n            \"careContexts\": [\n                {\n                    \"referenceNumber\": \"visit-{{$guid}}\",\n                    \"display\": \"Consultation on {{$randomDatePast}}\"\n                }\n            ]\n        }\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://dev.abdm.gov.in/gateway/v0.5/links/link/add-contexts",
+							"protocol": "https",
+							"host": [
+								"dev",
+								"abdm",
+								"gov",
+								"in"
+							],
+							"path": [
+								"gateway",
+								"v0.5",
+								"links",
+								"link",
+								"add-contexts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "M2 · SMS Notify",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJBbFJiNVdDbThUbTlFSl9JZk85ejA2ajlvQ3Y1MXBLS0ZrbkdiX1RCdkswIn0.eyJleHAiOjE2OTQ3MDU5MTQsImlhdCI6MTY5NDY4NDMxNCwianRpIjoiODllNjc5MWUtYTc3ZS00NjU3LWE3ZjQtOWI5YTVmNDhkMTI1IiwiaXNzIjoiaHR0cHM6Ly9kZXYubmRobS5nb3YuaW4vYXV0aC9yZWFsbXMvY2VudHJhbC1yZWdpc3RyeSIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiI5NTdjMWVmYi1lZGRmLTRkZmEtOGQyNi03ZmQyYjhhNGJhOTciLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJTQlhfMDAyMTU3Iiwic2Vzc2lvbl9zdGF0ZSI6ImMzMTc4YjE2LTI5N2MtNGVlNi1iYjJiLTg3YjAzNjYwNDZhNSIsImFjciI6IjEiLCJhbGxvd2VkLW9yaWdpbnMiOlsiaHR0cDovL2xvY2FsaG9zdDo5MDA3Il0sInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJoaXUiLCJvZmZsaW5lX2FjY2VzcyIsImhlYWx0aElkIiwiT0lEQyIsImhpcCJdfSwicmVzb3VyY2VfYWNjZXNzIjp7IlNCWF8wMDIxNTciOnsicm9sZXMiOlsidW1hX3Byb3RlY3Rpb24iXX0sImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoib3BlbmlkIGVtYWlsIHByb2ZpbGUiLCJjbGllbnRIb3N0IjoiMTAuMjMzLjcwLjI0MiIsImNsaWVudElkIjoiU0JYXzAwMjE1NyIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwicHJlZmVycmVkX3VzZXJuYW1lIjoic2VydmljZS1hY2NvdW50LXNieF8wMDIxNTciLCJjbGllbnRBZGRyZXNzIjoiMTAuMjMzLjcwLjI0MiJ9.SEi4xPoM-InFf-tIr-Sp4fF4EdY78uaPR1OudW7_pDSL9mKUy_JkGZve1NkWzafwQTGRkygNecD8WQjO3cWWh8A7E2zQoHxI4eUx8k9IrE3nTGaJ5sQPqL-UlP5I3wHMiSRBPrCft4UQJCgyYvW8b0ozng9FkL1BNrJsSXogaEBz3aq366ERt_BdhHr4qUVig9SVAMt4jMAGeaM1cC1sqls1SDPIXk-JTN8OLNBFlSb35crNz5Qan8Wf59DcyMTkKuO82a3HNPIzxEgdkSc4i3kZ464KxWtmmP-Fss122hOSB7aS8G-PUhq-8HZcWlq7mL3JKO8IHrDdfZZs_qwU1Q",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJBbFJiNVdDbThUbTlFSl9JZk85ejA2ajlvQ3Y1MXBLS0ZrbkdiX1RCdkswIn0.eyJleHAiOjE2OTQ3MDU5MTQsImlhdCI6MTY5NDY4NDMxNCwianRpIjoiODllNjc5MWUtYTc3ZS00NjU3LWE3ZjQtOWI5YTVmNDhkMTI1IiwiaXNzIjoiaHR0cHM6Ly9kZXYubmRobS5nb3YuaW4vYXV0aC9yZWFsbXMvY2VudHJhbC1yZWdpc3RyeSIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiI5NTdjMWVmYi1lZGRmLTRkZmEtOGQyNi03ZmQyYjhhNGJhOTciLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJTQlhfMDAyMTU3Iiwic2Vzc2lvbl9zdGF0ZSI6ImMzMTc4YjE2LTI5N2MtNGVlNi1iYjJiLTg3YjAzNjYwNDZhNSIsImFjciI6IjEiLCJhbGxvd2VkLW9yaWdpbnMiOlsiaHR0cDovL2xvY2FsaG9zdDo5MDA3Il0sInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJoaXUiLCJvZmZsaW5lX2FjY2VzcyIsImhlYWx0aElkIiwiT0lEQyIsImhpcCJdfSwicmVzb3VyY2VfYWNjZXNzIjp7IlNCWF8wMDIxNTciOnsicm9sZXMiOlsidW1hX3Byb3RlY3Rpb24iXX0sImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoib3BlbmlkIGVtYWlsIHByb2ZpbGUiLCJjbGllbnRIb3N0IjoiMTAuMjMzLjcwLjI0MiIsImNsaWVudElkIjoiU0JYXzAwMjE1NyIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwicHJlZmVycmVkX3VzZXJuYW1lIjoic2VydmljZS1hY2NvdW50LXNieF8wMDIxNTciLCJjbGllbnRBZGRyZXNzIjoiMTAuMjMzLjcwLjI0MiJ9.SEi4xPoM-InFf-tIr-Sp4fF4EdY78uaPR1OudW7_pDSL9mKUy_JkGZve1NkWzafwQTGRkygNecD8WQjO3cWWh8A7E2zQoHxI4eUx8k9IrE3nTGaJ5sQPqL-UlP5I3wHMiSRBPrCft4UQJCgyYvW8b0ozng9FkL1BNrJsSXogaEBz3aq366ERt_BdhHr4qUVig9SVAMt4jMAGeaM1cC1sqls1SDPIXk-JTN8OLNBFlSb35crNz5Qan8Wf59DcyMTkKuO82a3HNPIzxEgdkSc4i3kZ464KxWtmmP-Fss122hOSB7aS8G-PUhq-8HZcWlq7mL3JKO8IHrDdfZZs_qwU1Q",
+								"type": "text",
+								"uuid": "7b4ccf7a-f756-43d9-b6a0-7547ea8ae838"
+							},
+							{
+								"key": "X-CM-ID",
+								"value": "sbx",
+								"type": "text",
+								"uuid": "eb5cf4bc-b90d-4e89-ac1e-c284315ea532"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"requestId\": \"{{$guid}}\",\n    \"timestamp\": \"{{$isoTimestamp}}\",\n    \"notification\": {\n        \"phoneNo\": \"+91-6289542836\",\n        \"hip\": {\n            \"name\": \"Hitesh Mishra\",\n            \"id\": \"demo-hip-0002\"\n        }\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://dev.abdm.gov.in/gateway/v0.5/patients/sms/notify2",
+							"protocol": "https",
+							"host": [
+								"dev",
+								"abdm",
+								"gov",
+								"in"
+							],
+							"path": [
+								"gateway",
+								"v0.5",
+								"patients",
+								"sms",
+								"notify2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User initiated linking",
+			"item": [
+				{
+					"name": "M2 · On Discover Care Contexts",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"requestId\": \"{{$guid}}\",\n    \"timestamp\": \"{{timestamp}}\",\n    \"transactionId\": \"99cf25ff-f62d-416f-871c-19e4c0405c6f\",\n    \"patient\": {\n        \"referenceNumber\": \"pat-1\",\n        \"display\": \"Hitesh Mishra\",\n        \"careContexts\": [\n            {\n                \"referenceNumber\": \"cc01\",\n                \"display\": \"14-sep-2023-checkup\"\n            }\n        ],\n        \"matchedBy\": [\n            \"MOBILE\"\n        ]\n    },\n    \"resp\": {\n        \"requestId\": \"8643802d-811d-4fb3-a19d-72f6c142ee2\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://dev.abdm.gov.in/gateway/v0.5/care-contexts/on-discover",
+							"protocol": "https",
+							"host": [
+								"dev",
+								"abdm",
+								"gov",
+								"in"
+							],
+							"path": [
+								"gateway",
+								"v0.5",
+								"care-contexts",
+								"on-discover"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "M2 · On Init Link",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"requestId\": {{$guid}},\n    \"timestamp\": {{$isoTimestamp}},\n    \"transactionId\": \"\",\n    \"link\": {\n        \"referenceNumber\": \"\",\n        \"authenticationType\": \"DIRECT\",\n        \"meta\": {\n            \"communicationMedium\": \"MOBILE\",\n            \"communicationHint\": \"string\",\n            \"communicationExpiry\": {{$randomDateFuture}}\n        }\n    },\n    \"error\": null,\n    \"resp\": {\n        \"requestId\": \"\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://dev.abdm.gov.in/gateway/v0.5/links/link/on-init",
+							"protocol": "https",
+							"host": [
+								"dev",
+								"abdm",
+								"gov",
+								"in"
+							],
+							"path": [
+								"gateway",
+								"v0.5",
+								"links",
+								"link",
+								"on-init"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "M2 · On Confirm Link",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"requestId\": {{$guid}},\n    \"timestamp\": {{$isoTimestamp}},\n    \"patient\": {\n        \"referenceNumber\": \"PUID-000001\",\n        \"display\": \"Sachin Yadav\",\n        \"careContexts\": [\n            {\n                \"referenceNumber\": \"visit-99999\",\n                \"display\": \"Test consultation on 18th November\"\n            }\n        ],\n    },\n    \"error\": null,\n    \"resp\": {\n        \"requestId\": \"\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://dev.abdm.gov.in/gateway/v0.5/links/link/on-confirm",
+							"protocol": "https",
+							"host": [
+								"dev",
+								"abdm",
+								"gov",
+								"in"
+							],
+							"path": [
+								"gateway",
+								"v0.5",
+								"links",
+								"link",
+								"on-confirm"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Data transfer (HIP)",
+			"item": [
+				{
+					"name": "/on-notify",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"const moment = require('moment');",
+									"pm.globals.set(\"timestamp\", moment.utc().format(\"YYYY-MM-DDTHH:mm:ss.SSSSSS\"));"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "*/*",
+								"uuid": "9e121f43-d994-436b-a018-a2a1b8866bbf"
+							},
+							{
+								"key": "X-CM-ID",
+								"value": "sbx",
+								"uuid": "cf82e0ee-cc15-4306-86ac-130b090f8cc5"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"uuid": "480141a6-f758-48a5-8a2a-edbec9b1a7f8"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{SERVICE_AUTHORIZATION}}",
+								"type": "text",
+								"uuid": "a86c9627-d397-4181-8bdf-f3011998cb74"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"requestId\": \"{{$guid}}\",\n    \"timestamp\": \"{{timestamp}}\",\n    \"acknowledgement\": {\n        \"status\": \"OK\",\n        \"consentId\": \"0d773946-b503-4010-8b71-2e947ed62b88\"\n    },\n\n    \"resp\": {\n        \"requestId\": \"7b606a73-ae88-47d0-b2fe-083808582805\"\n    }\n}"
+						},
+						"url": {
+							"raw": "https://dev.ndhm.gov.in/gateway/v0.5/consents/hip/on-notify",
+							"protocol": "https",
+							"host": [
+								"dev",
+								"ndhm",
+								"gov",
+								"in"
+							],
+							"path": [
+								"gateway",
+								"v0.5",
+								"consents",
+								"hip",
+								"on-notify"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/on-request",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"const moment = require('moment');",
+									"pm.globals.set(\"timestamp\", moment.utc().format(\"YYYY-MM-DDTHH:mm:ss.SSSSSS\"));"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJBbFJiNVdDbThUbTlFSl9JZk85ejA2ajlvQ3Y1MXBLS0ZrbkdiX1RCdkswIn0.eyJleHAiOjE2OTQ4ODI1NjksImlhdCI6MTY5NDg2MDk2OSwianRpIjoiY2FjOTkzMzgtYTU4YS00NzhkLTkyZDYtZDkyZTEwMmUyMDI3IiwiaXNzIjoiaHR0cHM6Ly9kZXYubmRobS5nb3YuaW4vYXV0aC9yZWFsbXMvY2VudHJhbC1yZWdpc3RyeSIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiI5NTdjMWVmYi1lZGRmLTRkZmEtOGQyNi03ZmQyYjhhNGJhOTciLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJTQlhfMDAyMTU3Iiwic2Vzc2lvbl9zdGF0ZSI6ImM4M2YwYTJkLTFjY2ItNDc3NS1iODg3LTRlZGRhNzEwYzcxNiIsImFjciI6IjEiLCJhbGxvd2VkLW9yaWdpbnMiOlsiaHR0cDovL2xvY2FsaG9zdDo5MDA3Il0sInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJoaXUiLCJvZmZsaW5lX2FjY2VzcyIsImhlYWx0aElkIiwiT0lEQyIsImhpcCJdfSwicmVzb3VyY2VfYWNjZXNzIjp7IlNCWF8wMDIxNTciOnsicm9sZXMiOlsidW1hX3Byb3RlY3Rpb24iXX0sImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoib3BlbmlkIGVtYWlsIHByb2ZpbGUiLCJjbGllbnRIb3N0IjoiMTAuMjMzLjY3LjEwNSIsImNsaWVudElkIjoiU0JYXzAwMjE1NyIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwicHJlZmVycmVkX3VzZXJuYW1lIjoic2VydmljZS1hY2NvdW50LXNieF8wMDIxNTciLCJjbGllbnRBZGRyZXNzIjoiMTAuMjMzLjY3LjEwNSJ9.GFSX9Y1Mxx3XRxt9WjaITkGN0QzmTpL3r8EfFJ5kwJXeETOCGcs-QjlN54VDMKRtWJ7qsbbjsgyH2X6CvsjZunIqFf4qiQIEL7NX04xCf2SooJjMW4SaaThvlJcqjji-1yALlCgydfyMknSvmByUYz3bC0fGvWgPIWoEYxXrSrbJuvl-SGRK-Jnb2vl-fTOntub-tfTGTTjGKbTCtN6WKSC3snT9rmedITLCHUG7K16rBatJhl74WBFo5_eN-hLoXpN8iBsSIS7URyxd6pF2fBPOqe1n59xI-xdF8VYwSN_fdymwdLA0bLu7zc2qH_7gIxWeM10qIoK82RKRHhDfrA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "*/*",
+								"uuid": "034bbf14-5a9b-444d-b44e-1402a69582ad"
+							},
+							{
+								"key": "X-CM-ID",
+								"value": "sbx",
+								"uuid": "a8e251af-eea8-458b-8345-39f09200da98"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"uuid": "cc0356d4-1790-43fb-816a-3646f728bce1"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{SERVICE_AUTHORIZATION}}",
+								"type": "text",
+								"uuid": "aa8fe101-0911-40fd-8180-5ec9a155c268"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \n    \"requestId\": \"{{$guid}}\",\n    \"timestamp\": \"{{timestamp}}\",\n    \"hiRequest\": {\n        \"transactionId\": \"eb166924-bd2b-4e7a-9c78-a3e9b5fcb4d1\",\n        \"sessionStatus\": \"ACKNOWLEDGED\"\n    },\n    \"resp\": {\n        \"requestId\": \"38341589-7ab0-4603-b7de-1571dbfae80b\"\n    }\n}"
+						},
+						"url": {
+							"raw": "https://dev.ndhm.gov.in/gateway/v0.5/health-information/hip/on-request",
+							"protocol": "https",
+							"host": [
+								"dev",
+								"ndhm",
+								"gov",
+								"in"
+							],
+							"path": [
+								"gateway",
+								"v0.5",
+								"health-information",
+								"hip",
+								"on-request"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Calling Data push URL",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJBbFJiNVdDbThUbTlFSl9JZk85ejA2ajlvQ3Y1MXBLS0ZrbkdiX1RCdkswIn0.eyJleHAiOjE2OTA5MDc5NzEsImlhdCI6MTY5MDg4NjM3MSwianRpIjoiYmZhNjk5MmYtZjY1NC00M2ZiLWJmZjUtZTlkZjc1OTU1NDRiIiwiaXNzIjoiaHR0cHM6Ly9kZXYubmRobS5nb3YuaW4vYXV0aC9yZWFsbXMvY2VudHJhbC1yZWdpc3RyeSIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiJiZjI4NGRkMS1jMTQ0LTQ1M2YtODAxNC04NDhhODY4MTNjMTIiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJTQlhfMDAwMjI4Iiwic2Vzc2lvbl9zdGF0ZSI6IjcyZTE5MTZjLTU4NTQtNGUxMy05MWYzLTY3NjJhYzM2YmNlYSIsImFjciI6IjEiLCJhbGxvd2VkLW9yaWdpbnMiOlsiaHR0cDovL2xvY2FsaG9zdDo5MDA3Il0sInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJoaXUiLCJvZmZsaW5lX2FjY2VzcyIsImhlYWx0aElkIiwicGhyIiwiT0lEQyIsImhpcCIsImhwX2lkIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsiU0JYXzAwMDIyOCI6eyJyb2xlcyI6WyJ1bWFfcHJvdGVjdGlvbiJdfSwiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsIm1hbmFnZS1hY2NvdW50LWxpbmtzIiwidmlldy1wcm9maWxlIl19fSwic2NvcGUiOiJvcGVuaWQgZW1haWwgcHJvZmlsZSIsImNsaWVudElkIjoiU0JYXzAwMDIyOCIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwiY2xpZW50SG9zdCI6IjEwLjIzMy42OS45IiwicHJlZmVycmVkX3VzZXJuYW1lIjoic2VydmljZS1hY2NvdW50LXNieF8wMDAyMjgiLCJjbGllbnRBZGRyZXNzIjoiMTAuMjMzLjY5LjkifQ.eUvua7Kowh_GF_hD4f26MRNLiU1aloZJaWzfOc1cy3UZil0g_og1uD1Ti3Pe_quEUc3yUUQluNazF90MmAmRR0PDCzXs0U-icHu52Zg1coOfp_xYr1nORTtcTbKUsul3ZfAo7Fy8dEhBaDJ0q8A9lwNyMqFGGq3YcBUlgxEvh1RM8JaOP31YB07CTxYhzpSkqLMsnJgLy08Y2-IIK76RrWkxPNLBRZgMduTmc1zEJlDaXes0sLEbaaVkX7PcDvJTPR1lXy0u5fwUOyjP6zOyrqLf2i2nAB5A3Baknxg2aycGUwSvHt9_1VdoirfXydaEh_L_r9TFGzlvbVePVd_IVw",
+								"uuid": "1c7f5b91-3ff8-492b-84de-90d8fdc51b21"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"uuid": "51325dc1-6f10-47a4-be40-3d2d914205cf"
+							},
+							{
+								"key": "Cookie",
+								"value": "TS011c04bd=01445fed043956929afa61b39f99e9441415badee5a69a613e51238fa6eca32cf3c1dc1ee679c674d9aa7ee7f14280e63e55af943a",
+								"uuid": "e4b5f3fc-dbfe-4daa-aa9c-6436904865f8"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"pageNumber\": 0,\n    \"pageCount\": 1,\n    \"transactionId\": \"d7b5e623-610d-48ee-968d-410d2071d8a5\",\n    \"entries\": [\n        {\"content\": \"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\",\n            \"media\": \"application/fhir+json\",\n            \"checksum\": \"0efe05e087a25105807f2ce890564090\",\n            \"careContextReference\": \"66-20230001250-1\"\n        }\n    ],\n    \"keyMaterial\": {\n        \"cryptoAlg\": \"ECDH\",\n        \"curve\": \"Curve25519\",\n        \"dhPublicKey\": {\n            \"expiry\": \"2020-08-02T10:50:37.764Z\",\n            \"parameters\": \"Curve25519/32byte random key\",\n            \"keyValue\": \"MIIBMTCB6gYHKoZIzj0CATCB3gIBATArBgcqhkjOPQEBAiB/////////////////////////////////////////7TBEBCAqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqYSRShRAQge0Je0Je0Je0Je0Je0Je0Je0Je0Je0Je0JgtenHcQyGQEQQQqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq0kWiCuGaG4oIa04B7dLHdI0UySPU1+bXxhsinpxaJ+ztPZAiAQAAAAAAAAAAAAAAAAAAAAFN753qL3nNZYEmMaXPXT7QIBCANCAAQ4Mq4z87KAViFZz26uie71YAQ0sBFjoTsa/cc1RXYvRyjrFpekHYj+pQ8M3WfBXcXX+5XYHpBT6wKufxmvTAy8\"\n        },\n        \"nonce\": \"HXA536iNb86c3grjebAK5ahfbR+tRoe9yIUrxwbZwsw=\"\n    }\n}"
+						},
+						"url": {
+							"raw": "https://dev.abdm.gov.in/api-hiu/data/notification",
+							"protocol": "https",
+							"host": [
+								"dev",
+								"abdm",
+								"gov",
+								"in"
+							],
+							"path": [
+								"api-hiu",
+								"data",
+								"notification"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/health-information/notify",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"const moment = require('moment');",
+									"pm.globals.set(\"timestamp\", moment.utc().format(\"YYYY-MM-DDTHH:mm:ss.SSSSSS\"));"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "*/*",
+								"uuid": "7c7d993b-99cf-41fe-9ff8-be9e2677860e"
+							},
+							{
+								"key": "X-CM-ID",
+								"value": "sbx",
+								"uuid": "c3804fcd-e322-4809-9dff-97674be62284"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"uuid": "fe3b72c2-f0dc-4167-b091-e6df10948a3f"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{SERVICE_AUTHORIZATION}}",
+								"type": "text",
+								"uuid": "790c4643-3ae4-47dd-a71c-b61e63f43196"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n     \"requestId\": \"{{$guid}}\",\n    \"timestamp\": \"{{timestamp}}\",\n    \"notification\": {\n        \"consentId\": \"2de9bfbc-6c19-434e-a9a2-aab072c1dc88\",\n        \"transactionId\": \"0969e59f-57eb-458e-b667-38fc635371aa\",\n        \"doneAt\": \"2020-10-07T09:52:51.518Z\",\n        \"notifier\": {\n            \"type\": \"HIU\",\n            \"id\": \"SUKREET_1242350\"\n        },\n        \"statusNotification\": {\n            \"sessionStatus\": \"TRANSFERRED\",\n            \"hipId\": \"SUKREET_124235\",\n            \"statusResponses\": [\n                {\n                    \"careContextReference\": \"string\",\n                    \"hiStatus\": \"OK\",\n                    \"description\": \"string\"\n                }\n            ]\n        }\n    }\n}"
+						},
+						"url": {
+							"raw": "https://dev.ndhm.gov.in/gateway/v0.5/health-information/notify",
+							"protocol": "https",
+							"host": [
+								"dev",
+								"ndhm",
+								"gov",
+								"in"
+							],
+							"path": [
+								"gateway",
+								"v0.5",
+								"health-information",
+								"notify"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		}
+	]
+}
