@@ -214,15 +214,7 @@
 								"uuid": "3b6d36a8-da63-4e68-a58b-930469783e78"
 							}
 						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"requestId\": \"{{$guid}}\",\n    \"timestamp\": \"{{$isoTimestamp}}\",\n    \"query\": {\n        \"id\": \"{{Patient_ID}}\",\n        \"purpose\": \"KYC_AND_LINK\",\n        \"requester\": {\n            \"type\": \"HIP\",\n            \"id\": \"{{HIP_ID}}\"\n        }\n    }\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
+						 
 						"url": {
 							"raw": "https://dev.abdm.gov.in/gateway/v0.5/users/auth/fetch-modes",
 							"protocol": "https",
@@ -250,11 +242,7 @@
 						"auth": {
 							"type": "bearer",
 							"bearer": [
-								{
-									"key": "token",
-									"value": "{{Auth_Token}}",
-									"type": "string"
-								}
+								 
 							]
 						},
 						"method": "POST",
@@ -345,19 +333,8 @@
 						"url": {
 							"raw": "https://dev.ndhm.gov.in/gateway/v0.5/users/auth/confirm",
 							"protocol": "https",
-							"host": [
-								"dev",
-								"ndhm",
-								"gov",
-								"in"
-							],
-							"path": [
-								"gateway",
-								"v0.5",
-								"users",
-								"auth",
-								"confirm"
-							]
+							 
+							 
 						}
 					},
 					"response": []
@@ -521,7 +498,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"requestId\": {{$guid}},\n    \"timestamp\": {{$isoTimestamp}},\n    \"transactionId\": \"\",\n    \"link\": {\n        \"referenceNumber\": \"\",\n        \"authenticationType\": \"DIRECT\",\n        \"meta\": {\n            \"communicationMedium\": \"MOBILE\",\n            \"communicationHint\": \"string\",\n            \"communicationExpiry\": {{$randomDateFuture}}\n        }\n    },\n    \"error\": null,\n    \"resp\": {\n        \"requestId\": \"\"\n    }\n}",
+							 
 							"options": {
 								"raw": {
 									"language": "json"
